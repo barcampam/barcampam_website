@@ -1,0 +1,13 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended"
+  ],
+  "settings": {},
+  "env": {
+    "browser": "true",
+    "node": "true"
+  },
+  "rules": {},
+  "globals": {}
+}

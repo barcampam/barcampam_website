@@ -1,0 +1,909 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~vars';
+@import '~mixins';
+
+@import url(http://allfont.net/allfont.css?fonts=agency-fb&fonts=agency-fb-bold);
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+body {
+  font-size: 25px;
+  font-family: 'Agency FB', arial;
+
+  backface-visibility: hidden;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: white;
+    }
+
+    &.current {
+      cursor: default;
+
+      pointer-events: none;
+    }
+  }
+}
+
+body:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -999;
+
+  height: $min-height;
+
+  background-color: $purple;
+
+  content: '';
+}
+
+body:before,
+main,
+section {
+  width: 100vw;
+
+  @include breakpoint(desktop) {
+    min-width: $min-width;
+  }
+}
+
+main .header-item {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+
+  height: 40px;
+
+  margin-top: 40px;
+}
+
+main .header-item-left {
+  left: $padding;
+
+  @include breakpoint(mobile) {
+    left: $padding-mobile;
+  }
+}
+
+main .header-item-center {
+  left: 50%;
+
+  margin-left: -45px;
+
+  @include breakpoint(mobile) {
+    top: 50px;
+    left: $padding-mobile;
+
+    margin-left: 5px;
+  }
+
+  a.current {
+    text-decoration: underline;
+  }
+}
+
+main .header-item-right {
+  right: $padding;
+
+  @include breakpoint(mobile) {
+    top: 50px;
+    right: $padding-mobile;
+  }
+
+  a {
+    padding: 0 7px;
+    border: 2px solid $gray;
+
+    color: $gray;
+
+    &:first-of-type {
+      border-right: none;
+    }
+
+    &.current {
+      color: white;
+    }
+  }
+}
+
+main .toon {
+  position: absolute;
+  z-index: -998;
+
+  transform: scale(0.7);
+}
+
+main .toon-red {
+  top: -70px;
+  right: 13%;
+}
+
+main .toon-yellow {
+  top: 130px;
+  left: 12%;
+}
+
+main .toon-blue {
+  $top: 440px;
+  top: $top;
+  left: 40%;
+
+  @include breakpoint(mobile) {
+    top: $top - 35px;
+    left: -40px;
+  }
+}
+
+main .left-center {
+  position: absolute;
+  top: $min-height - 412px;
+  left: $padding;
+  z-index: 999;
+
+  @include breakpoint(mobile) {
+    left: $padding-mobile;
+  }
+
+  .icon {
+    display: block;
+    margin-bottom: 16px;
+    padding: 0 6px;
+    border: 1px solid white;
+
+    color: white;
+
+    &:hover {
+      background-color: white;
+
+      svg {
+        fill: $purple;
+      }
+    }
+
+    svg {
+      margin-top: -6px;
+
+      fill: white;
+    }
+
+    &, svg {
+      transition: background-color 0.2s, fill 0.2s;
+    }
+  }
+}
+
+main .bottom-right {
+  position: absolute;
+  top: $min-height - 142px;
+  right: 45px;
+  z-index: 999;
+
+  @include breakpoint(mobile) {
+    right: 0;
+  }
+
+  .google-play,
+  .google-play img {
+    width: 220px;
+  }
+}
+
+main .pixel-container {
+  position: absolute;
+  top: $min-height;
+  z-index: -999;
+
+  .pixel {
+    width: $padding;
+    height: $padding;
+  }
+
+  .pixel-fill {
+    background-color: $purple
+  }
+}
+
+section {
+  position: relative;
+
+  padding: $padding;
+
+  @include breakpoint(mobile) {
+    padding: $padding-mobile;
+  }
+}
+
+section:first-of-type {
+  height: $min-height - 80px;
+  margin-top: 80px;
+  margin-bottom: 2 * $padding;
+}
+
+section:first-of-type.index {
+  .center {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+
+    max-width: 600px;
+
+    margin-left: -230px;
+
+    color: white;
+    font-size: 40px;
+    line-height: 44px;
+    text-transform: uppercase;
+
+    @include breakpoint(mobile) {
+      top: 30%;
+      left: 80px;
+
+      width: 270px;
+
+      margin-left: initial;
+
+      font-size: 20px;
+    }
+
+    > div {
+      padding: 4px 0;
+    }
+
+    .p {
+      padding: 0 18px;
+
+      background-color: $blue;
+    }
+
+    > .p {
+      padding-left: 6px;
+    }
+
+    .date {
+      padding-right: 16px;
+
+      transform: scale(1.3);
+
+      @include breakpoint(mobile) {
+        padding-right: 0;
+
+        background-color: $blue;
+
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+section:first-of-type.about-faq {
+  .center {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+
+    width: 500px;
+    max-height: 390px;
+
+    margin-left: -230px;
+    padding: 5px;
+    overflow: scroll;
+
+    color: white;
+
+    background-color: $blue;
+
+    @include breakpoint(mobile) {
+      top: 10%;
+      left: 80px;
+
+      width: 270px;
+
+      margin-left: initial;
+    }
+  }
+}
+
+section.sponsors {
+  padding-right: 100px;
+  padding-left: 200px;
+
+  color: $blue;
+
+  @include breakpoint(mobile) {
+    padding-right: $padding-mobile;
+    padding-bottom: $padding;
+    padding-left: $padding-mobile;
+  }
+
+  h2 {
+    margin-bottom: 24px;
+
+    @include breakpoint(mobile) {
+      margin-bottom: 12px;
+    }
+  }
+
+  .logo-group {
+    margin-bottom: 24px;
+  }
+
+  .logo {
+    width: 100px;
+    height: auto;
+    margin: 0 60px 60px 0;
+
+    img {
+      max-width: 100%;
+    }
+
+    @include breakpoint(mobile) {
+      width: 80px;
+      height: auto;
+      margin: 0 25px 25px 0;
+    }
+  }
+}
+
+section.footer {
+  padding-top: 120px;
+
+  color: white;
+
+  background-color: $blue;
+
+  a.current {
+    text-decoration: underline;
+
+    user-select: none;
+  }
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+  }
+}
+
+section.footer .toon {
+  transform: scale(0.8);
+}
+
+section.footer .toon-green {
+  position: absolute;
+  top: -180px;
+  right: 0;
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}
+
+section.footer .toon-yellow {
+  margin-top: -30px;
+
+  @include breakpoint(mobile) {
+    margin-top: -120px;
+    margin-bottom: -45px;
+  }
+
+  img {
+    height: 100%;
+  }
+}
+
+section.footer .pixel-container {
+  position: absolute;
+  top: - $padding;
+  left: 0;
+
+  .pixel {
+    width: $padding;
+    height: $padding;
+
+    background-color: white;
+  }
+
+  .pixel-fill {
+    background-color: $blue;
+  }
+}
+
+section.footer .links {
+  @include breakpoint(desktop) {
+    margin-right: 55px;
+  }
+
+  > *:not(:first-child) {
+    @include breakpoint(desktop) {
+      margin-left: 16px;
+    }
+  }
+
+  .icon {
+    margin-right: 16px;
+    padding: 0 6px;
+    border: 1px solid white;
+
+    color: white;
+
+    &:hover {
+      background-color: white;
+
+      svg {
+        fill: $blue;
+      }
+    }
+
+    svg {
+      margin-top: -6px;
+
+      fill: white;
+    }
+
+    &, svg {
+      transition: background-color 0.2s, fill 0.2s;
+    }
+  }
+}
+
+section.footer .contacts {
+  margin-right: 55px;
+
+  @include breakpoint(mobile) {
+    margin-right: 0;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  h1 {
+    color: $yellow;
+    line-height: 37px;
+  }
+}
+
+section.footer .contacts, section.footer .links {
+  @include breakpoint(desktop) {
+    margin-top: 24px
+  }
+}
+
+section.timetable {
+  .toon {
+    position: absolute;
+    z-index: -999;
+
+    transform: scale(0.8);
+  }
+
+  .toon-pink {
+    bottom: -250px;
+    left: -140px;
+
+    @include breakpoint(mobile) {
+      display: none;
+    }
+  }
+
+  .pixel-container-right {
+    position: absolute;
+    right: 0;
+    bottom: -100px;
+    z-index: -999;
+
+    @include breakpoint(mobile) {
+      display: none;
+    }
+
+    .pixel {
+      width: $padding;
+      height: $padding;
+
+      background-color: white;
+    }
+
+    .pixel-fill {
+      background-color: $blue;
+    }
+  }
+}
+
+section.timetable .header {
+  position: absolute;
+  top: -1 * $padding;
+  right: $padding;
+  left: 4 * $padding;
+  z-index: 999;
+
+  height: $padding;
+
+  @include breakpoint(mobile) {
+    top: 0;
+    right: $padding-mobile;
+    left: $padding-mobile * 2;
+
+    justify-content: end;
+  }
+
+  > * {
+    margin-top: auto;
+
+    line-height: 27px;
+  }
+
+  h2 {
+    color: $blue;
+
+    @include breakpoint(mobile) {
+      position: absolute;
+      top: -34px;
+      left: 22px;
+
+      margin: 0;
+    }
+  }
+
+  .timetable-buttons {
+    @include breakpoint(mobile) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .timetable-buttons > * {
+    padding: 6px 12px;
+    border: 2px solid $gray;
+
+    color: $gray;
+    font-size: 22px;
+
+    &:first-of-type {
+      border-right: none;
+    }
+
+    &.current {
+      color: white;
+    }
+  }
+
+  .timetable-buttons a {
+    transition: color 0.2s, backround-color 0.2s;
+
+    &:hover, &.current {
+      color: white;
+
+      background-color: $gray;
+    }
+  }
+
+  .timetable-buttons div:last-child {
+    @include breakpoint(mobile) {
+      display: none;
+    }
+  }
+}
+
+section.timetable .calendar {
+  $header-height: $padding * 2 / 3;
+  $pixel-dim: $header-height / 2;
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+  }
+
+  .pixel-container {
+    position: relative;
+
+    height: 100%;
+
+    .pixel {
+      width: $pixel-dim;
+      height: $pixel-dim;
+
+      background-color: white;
+    }
+
+    .pixel-fill {
+      background-color: $light-blue;
+    }
+
+    .pixel-top {
+      position: absolute;
+      top: - $pixel-dim;
+      left: $pixel-dim * 3;
+    }
+
+    .pixel-bottom-left {
+      position: absolute;
+      top: $pixel-dim * 2;
+      left: - $pixel-dim;
+    }
+  }
+
+  .calendar-column {
+    min-width: 0;
+
+    &:not(:first-child) {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+
+    &:not(:last-child) .header-item {
+      @include breakpoint(desktop) {
+        border-right: 2px solid $gray;
+      }
+    }
+
+    .header-item {
+      height: $header-height;
+
+      color: white;
+      line-height: $header-height;
+
+      text-align: center;
+      text-transform: uppercase;
+
+      background-color: $light-blue;
+    }
+
+    .time, .slot {
+      height: 125px;
+
+      @include breakpoint(mobile) {
+        height: initial;
+      }
+    }
+
+    .time {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include breakpoint(mobile) {
+        display: none;
+      }
+    }
+
+    .slot {
+      padding: 4px;
+
+      border-bottom: 1px solid $light-gray;
+
+      @include breakpoint(mobile) {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      * {
+        font-size: 11px;
+        font-family: 'Roboto Mono', monospace;
+
+        @include breakpoint(desktop) {
+          overflow: hidden;
+
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+
+      > div {
+        // height: 100%;
+        margin-bottom: 2px;
+        padding: 4px;
+        border-radius: 4px;
+
+        background-color: lightgray;
+      }
+
+      div div:first-child {
+        color: $gray;
+        font-weight: bold;
+      }
+
+      div div {
+        color: $light-gray;
+      }
+    }
+  }
+}
+
+section.speakers {
+  h2 {
+    margin-bottom: 24px;
+
+    color: $blue;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    @include breakpoint(mobile) {
+      margin-bottom: 12px;
+    }
+  }
+
+  a {
+    color: $light-blue !important;
+    font-size: 20px;
+    font-style: italic;
+
+    cursor: pointer;
+  }
+
+  .speaker {
+    width: 200px;
+    margin: 0 60px 60px 0;
+
+    .photo {
+      height: 250px;
+
+      margin-bottom: 7px;
+
+      background-position: center;
+      background-size: cover;
+    }
+
+    .name {
+      border: 2px solid $light-blue;
+
+      color: $light-blue;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .occupation {
+      color: $blue;
+      font-size: 22px;
+      text-transform: uppercase;
+    }
+  }
+
+  .toon {
+    position: absolute;
+    z-index: -999;
+
+    transform: scale(0.8);
+  }
+
+  .toon-disk {
+    right: -35px;
+    bottom: 50%;
+
+    margin-bottom: -225px;
+
+    @include breakpoint(mobile) {
+      display: none;
+    }
+  }
+
+  .pixel-container {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+
+    z-index: -999;
+
+    margin-bottom: -3 * $padding;
+
+    @include breakpoint(mobile) {
+      display: none;
+    }
+
+    .pixel {
+      width: $padding;
+      height: $padding;
+    }
+
+    .pixel-fill {
+      background-color: $light-blue;
+    }
+  }
+}
+
+section.livestream {
+  margin-bottom: $padding;
+
+  background-color: $blue;
+
+  @include breakpoint(mobile) {
+    margin-top: $padding;
+  }
+
+  h2 {
+    position: relative;
+    z-index: 999;
+
+    margin-left: 3 * $padding;
+
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  iframe {
+    @include breakpoint(mobile) {
+      width: 200px;
+    }
+  }
+
+  .livestream-content {
+    position: relative;
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    margin-top: $padding;
+
+    .live-links a {
+      display: block;
+      width: 120px;
+      margin-bottom: 4px;
+      border: 2px solid white;
+
+      color: white;
+      text-align: center;
+
+      cursor: pointer;
+    }
+  }
+
+  .toon {
+    position: absolute;
+
+    overflow: hidden;
+
+    transform: scale(0.5);
+  }
+
+  .toon-pink {
+    top: -250px;
+    right: -60px;
+
+    @include breakpoint(mobile) {
+      top: -280px;
+      left: -150px;
+
+      transform: scale(0.3);
+    }
+  }
+
+  .pixel-container {
+    position: absolute;
+
+    @include breakpoint(mobile) {
+      display: none;
+    }
+
+    .pixel {
+      width: $padding;
+      height: $padding;
+
+      background-color: white;
+    }
+
+    .pixel-fill {
+      background-color: $blue;
+    }
+
+  }
+
+  .pixel-container-top-left {
+    top: 0;
+    left: 0;
+  }
+
+  .pixel-container-bottom-left {
+    bottom: -2 * $padding;
+    left: 0;
+  }
+
+  .pixel-container-bottom-right {
+    right: 0;
+    bottom: 0;
+  }
+}

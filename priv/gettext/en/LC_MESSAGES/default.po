@@ -1,0 +1,132 @@
+## `msgid`s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove `msgid`s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use `mix gettext.extract --merge` or `mix gettext.merge`
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: en\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:16
+#: lib/barcamp_web/templates/layout/app.html.eex:127
+msgid "ABOUT"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:22
+msgid "ARM"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:147
+msgid "Baghramyan Ave"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:7
+msgid "Barcamp | Yerevan 2019"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:21
+msgid "ENG"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:17
+#: lib/barcamp_web/templates/layout/app.html.eex:130
+msgid "FAQ"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:106
+msgid "General"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:146
+msgid "Get in touch with us!"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/page/index.html.eex:9
+#: lib/barcamp_web/templates/page/index.html.eex:19
+msgid "Jun"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/page/index.html.eex:259
+msgid "Livestream"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:149
+msgid "Made with 💘, by"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:147
+msgid "Marshal"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:89
+msgid "Partners"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/page/index.html.eex:226
+msgid "Speakers"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/page/index.html.eex:211
+msgid "Special Speakers"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:69
+msgid "Sponsors"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/page/index.html.eex:17
+msgid "Timetable"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:147
+msgid "Yerevan"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/page/index.html.eex:213
+#: lib/barcamp_web/templates/page/index.html.eex:228
+msgid "see less"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/page/index.html.eex:212
+#: lib/barcamp_web/templates/page/index.html.eex:227
+msgid "see more"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/layout/app.html.eex:150
+msgid "view source"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/page/index.html.eex:3
+msgid "The most acclaimed tech and media"
+msgstr ""
+
+#, elixir-format
+#: lib/barcamp_web/templates/page/index.html.eex:6
+msgid "event in the region"
+msgstr ""
