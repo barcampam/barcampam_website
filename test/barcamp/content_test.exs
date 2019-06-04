@@ -191,4 +191,166 @@ defmodule Barcamp.ContentTest do
       assert %Ecto.Changeset{} = Content.change_affiliate(affiliate)
     end
   end
+
+  describe "faqs" do
+    alias Barcamp.Content.Faq
+
+    @valid_attrs %{answer_arm: "some answer_arm", answer_eng: "some answer_eng", question_arm: "some question_arm", question_eng: "some question_eng"}
+    @update_attrs %{answer_arm: "some updated answer_arm", answer_eng: "some updated answer_eng", question_arm: "some updated question_arm", question_eng: "some updated question_eng"}
+    @invalid_attrs %{answer_arm: nil, answer_eng: nil, question_arm: nil, question_eng: nil}
+
+    def faq_fixture(attrs \\ %{}) do
+      {:ok, faq} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Content.create_faq()
+
+      faq
+    end
+
+    test "paginate_faqs/1 returns paginated list of faqs" do
+      for _ <- 1..20 do
+        faq_fixture()
+      end
+
+      {:ok, %{faqs: faqs} = page} = Content.paginate_faqs(%{})
+
+      assert length(faqs) == 15
+      assert page.page_number == 1
+      assert page.page_size == 15
+      assert page.total_pages == 2
+      assert page.total_entries == 20
+      assert page.distance == 5
+      assert page.sort_field == "inserted_at"
+      assert page.sort_direction == "desc"
+    end
+
+    test "list_faqs/0 returns all faqs" do
+      faq = faq_fixture()
+      assert Content.list_faqs() == [faq]
+    end
+
+    test "get_faq!/1 returns the faq with given id" do
+      faq = faq_fixture()
+      assert Content.get_faq!(faq.id) == faq
+    end
+
+    test "create_faq/1 with valid data creates a faq" do
+      assert {:ok, %Faq{} = faq} = Content.create_faq(@valid_attrs)
+      assert faq.answer_arm == "some answer_arm"
+      assert faq.answer_eng == "some answer_eng"
+      assert faq.question_arm == "some question_arm"
+      assert faq.question_eng == "some question_eng"
+    end
+
+    test "create_faq/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Content.create_faq(@invalid_attrs)
+    end
+
+    test "update_faq/2 with valid data updates the faq" do
+      faq = faq_fixture()
+      assert {:ok, faq} = Content.update_faq(faq, @update_attrs)
+      assert %Faq{} = faq
+      assert faq.answer_arm == "some updated answer_arm"
+      assert faq.answer_eng == "some updated answer_eng"
+      assert faq.question_arm == "some updated question_arm"
+      assert faq.question_eng == "some updated question_eng"
+    end
+
+    test "update_faq/2 with invalid data returns error changeset" do
+      faq = faq_fixture()
+      assert {:error, %Ecto.Changeset{}} = Content.update_faq(faq, @invalid_attrs)
+      assert faq == Content.get_faq!(faq.id)
+    end
+
+    test "delete_faq/1 deletes the faq" do
+      faq = faq_fixture()
+      assert {:ok, %Faq{}} = Content.delete_faq(faq)
+      assert_raise Ecto.NoResultsError, fn -> Content.get_faq!(faq.id) end
+    end
+
+    test "change_faq/1 returns a faq changeset" do
+      faq = faq_fixture()
+      assert %Ecto.Changeset{} = Content.change_faq(faq)
+    end
+  end
+
+  describe "abouts" do
+    alias Barcamp.Content.About
+
+    @valid_attrs %{text_arm: "some text_arm", text_eng: "some text_eng"}
+    @update_attrs %{text_arm: "some updated text_arm", text_eng: "some updated text_eng"}
+    @invalid_attrs %{text_arm: nil, text_eng: nil}
+
+    def about_fixture(attrs \\ %{}) do
+      {:ok, about} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Content.create_about()
+
+      about
+    end
+
+    test "paginate_abouts/1 returns paginated list of abouts" do
+      for _ <- 1..20 do
+        about_fixture()
+      end
+
+      {:ok, %{abouts: abouts} = page} = Content.paginate_abouts(%{})
+
+      assert length(abouts) == 15
+      assert page.page_number == 1
+      assert page.page_size == 15
+      assert page.total_pages == 2
+      assert page.total_entries == 20
+      assert page.distance == 5
+      assert page.sort_field == "inserted_at"
+      assert page.sort_direction == "desc"
+    end
+
+    test "list_abouts/0 returns all abouts" do
+      about = about_fixture()
+      assert Content.list_abouts() == [about]
+    end
+
+    test "get_about!/1 returns the about with given id" do
+      about = about_fixture()
+      assert Content.get_about!(about.id) == about
+    end
+
+    test "create_about/1 with valid data creates a about" do
+      assert {:ok, %About{} = about} = Content.create_about(@valid_attrs)
+      assert about.text_arm == "some text_arm"
+      assert about.text_eng == "some text_eng"
+    end
+
+    test "create_about/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Content.create_about(@invalid_attrs)
+    end
+
+    test "update_about/2 with valid data updates the about" do
+      about = about_fixture()
+      assert {:ok, about} = Content.update_about(about, @update_attrs)
+      assert %About{} = about
+      assert about.text_arm == "some updated text_arm"
+      assert about.text_eng == "some updated text_eng"
+    end
+
+    test "update_about/2 with invalid data returns error changeset" do
+      about = about_fixture()
+      assert {:error, %Ecto.Changeset{}} = Content.update_about(about, @invalid_attrs)
+      assert about == Content.get_about!(about.id)
+    end
+
+    test "delete_about/1 deletes the about" do
+      about = about_fixture()
+      assert {:ok, %About{}} = Content.delete_about(about)
+      assert_raise Ecto.NoResultsError, fn -> Content.get_about!(about.id) end
+    end
+
+    test "change_about/1 returns a about changeset" do
+      about = about_fixture()
+      assert %Ecto.Changeset{} = Content.change_about(about)
+    end
+  end
 end

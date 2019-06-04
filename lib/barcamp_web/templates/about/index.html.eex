@@ -1,0 +1,69 @@
+<section id="torch-toolbar">
+  <div class="torch-container">
+    <%= link "New About", to: Routes.about_path(@conn, :new) %>
+  </div>
+</section>
+<section id="torch-index-content">
+  <div class="torch-container">
+    <section id="torch-filters">
+      <h3>Find Abouts</h3>
+      <%= form_tag @conn.request_path, method: :get, id: "torch-filters-form" do %>
+        
+          <div class="field">
+            <label>Text eng</label>
+            <%= filter_select(:about, :text_eng, @conn.params) %>
+            <%= filter_text_input(:about, :text_eng, @conn.params) %>
+          </div>
+        
+          <div class="field">
+            <label>Text arm</label>
+            <%= filter_select(:about, :text_arm, @conn.params) %>
+            <%= filter_text_input(:about, :text_arm, @conn.params) %>
+          </div>
+        
+        
+        
+        
+        <button type="submit" class="torch-button">Search</button>
+        <%= link "Clear Filters", to: Routes.about_path(@conn, :index) %>
+      <% end %>
+
+    </section>
+
+    <section id="torch-table">
+    <%= if length(@abouts) > 0 do %>
+      <table>
+        <thead>
+          <tr>
+            
+              <th><%= table_link(@conn, "Text eng", :text_eng) %></th>
+            
+              <th><%= table_link(@conn, "Text arm", :text_arm) %></th>
+            
+            <th><span>Actions</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= for about <- @abouts do %>
+            <tr>
+              
+                <td><%= about.text_eng %></td>
+              
+                <td><%= about.text_arm %></td>
+              
+              <td class="torch-actions">
+                <span><%= link "Show", to: Routes.about_path(@conn, :show, about) %></span>
+                <span><%= link "Edit", to: Routes.about_path(@conn, :edit, about) %></span>
+                <span><%= link "Delete", to: Routes.about_path(@conn, :delete, about), method: :delete, data: [confirm: "Are you sure?"] %></span>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= render Torch.PaginationView, "_pagination.html", assigns %>
+    <% else %>
+      <p class="torch-no-data">No Abouts match your search.</p>
+    <% end %>
+    </section>
+  </div>
+</section>

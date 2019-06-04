@@ -1,0 +1,27 @@
+<section id="torch-toolbar">
+  <div class="torch-container">
+    <%= link "Edit", to: Routes.about_path(@conn, :edit, @about), class: "torch-button" %>
+    <%= link "Back", to: Routes.about_path(@conn, :index), class: "torch-button" %>
+  </div>
+</section>
+
+<section id="torch-header-and-content">
+  <div class="torch-container">
+    <div class="header">
+      <h3>About Details</h3>
+    </div>
+    <ul>
+      
+        <li>
+          <div class="torch-show-label">Text eng:</div>
+          <div class="torch-show-data"><%= @about.text_eng %></div>
+        </li>
+      
+        <li>
+          <div class="torch-show-label">Text arm:</div>
+          <div class="torch-show-data"><%= @about.text_arm %></div>
+        </li>
+      
+    </ul>
+  </div>
+</section>

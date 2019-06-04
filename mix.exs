@@ -46,7 +46,9 @@ defmodule Barcamp.MixProject do
       {:plug_cowboy, "~> 2.0"},
 
       # Other stuff
-      {:set_locale, "~> 0.2.6"}
+      {:set_locale, "~> 0.2.6"},
+      {:torch, "~> 2.0.0-rc.1"},
+      {:distillery, "~> 2.0"}
     ]
   end
 

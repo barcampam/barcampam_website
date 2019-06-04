@@ -1,0 +1,142 @@
+<section id="torch-toolbar">
+  <div class="torch-container">
+    <%= link "New Speaker", to: Routes.speaker_path(@conn, :new) %>
+  </div>
+</section>
+<section id="torch-index-content">
+  <div class="torch-container">
+    <section id="torch-filters">
+      <h3>Find Speakers</h3>
+      <%= form_tag @conn.request_path, method: :get, id: "torch-filters-form" do %>
+        
+          <div class="field">
+            <label>Name</label>
+            <%= filter_select(:speaker, :name, @conn.params) %>
+            <%= filter_string_input(:speaker, :name, @conn.params) %>
+          </div>
+        
+          <div class="field">
+            <label>Bio</label>
+            <%= filter_select(:speaker, :bio, @conn.params) %>
+            <%= filter_text_input(:speaker, :bio, @conn.params) %>
+          </div>
+        
+          <div class="field">
+            <label>Topics</label>
+            <%= filter_select(:speaker, :topics, @conn.params) %>
+            <%= filter_string_input(:speaker, :topics, @conn.params) %>
+          </div>
+        
+          <div class="field">
+            <label>Facebook</label>
+            <%= filter_select(:speaker, :facebook, @conn.params) %>
+            <%= filter_string_input(:speaker, :facebook, @conn.params) %>
+          </div>
+        
+          <div class="field">
+            <label>Twitter</label>
+            <%= filter_select(:speaker, :twitter, @conn.params) %>
+            <%= filter_string_input(:speaker, :twitter, @conn.params) %>
+          </div>
+        
+          <div class="field">
+            <label>Website</label>
+            <%= filter_select(:speaker, :website, @conn.params) %>
+            <%= filter_string_input(:speaker, :website, @conn.params) %>
+          </div>
+        
+          <div class="field">
+            <label>Instagram</label>
+            <%= filter_select(:speaker, :instagram, @conn.params) %>
+            <%= filter_string_input(:speaker, :instagram, @conn.params) %>
+          </div>
+        
+          <div class="field">
+            <label>Linkedin</label>
+            <%= filter_select(:speaker, :linkedin, @conn.params) %>
+            <%= filter_string_input(:speaker, :linkedin, @conn.params) %>
+          </div>
+        
+        
+          <div class="field">
+            <label>Is special</label>
+            <%= filter_boolean_input(:speaker, :is_special, @conn.params) %>
+          </div>
+        
+        
+        
+        <button type="submit" class="torch-button">Search</button>
+        <%= link "Clear Filters", to: Routes.speaker_path(@conn, :index) %>
+      <% end %>
+
+    </section>
+
+    <section id="torch-table">
+    <%= if length(@speakers) > 0 do %>
+      <table>
+        <thead>
+          <tr>
+            
+              <th><%= table_link(@conn, "Name", :name) %></th>
+            
+              <th><%= table_link(@conn, "Bio", :bio) %></th>
+            
+              <th><%= table_link(@conn, "Topics", :topics) %></th>
+            
+              <th><%= table_link(@conn, "Facebook", :facebook) %></th>
+            
+              <th><%= table_link(@conn, "Twitter", :twitter) %></th>
+            
+              <th><%= table_link(@conn, "Website", :website) %></th>
+            
+              <th><%= table_link(@conn, "Instagram", :instagram) %></th>
+            
+              <th><%= table_link(@conn, "Photo", :photo) %></th>
+            
+              <th><%= table_link(@conn, "Is special", :is_special) %></th>
+            
+              <th><%= table_link(@conn, "Linkedin", :linkedin) %></th>
+            
+            <th><span>Actions</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= for speaker <- @speakers do %>
+            <tr>
+              
+                <td><%= speaker.name %></td>
+              
+                <td><%= speaker.bio %></td>
+              
+                <td><%= speaker.topics %></td>
+              
+                <td><%= speaker.facebook %></td>
+              
+                <td><%= speaker.twitter %></td>
+              
+                <td><%= speaker.website %></td>
+              
+                <td><%= speaker.instagram %></td>
+              
+                <td><%= speaker.photo %></td>
+              
+                <td><%= speaker.is_special %></td>
+              
+                <td><%= speaker.linkedin %></td>
+              
+              <td class="torch-actions">
+                <span><%= link "Show", to: Routes.speaker_path(@conn, :show, speaker) %></span>
+                <span><%= link "Edit", to: Routes.speaker_path(@conn, :edit, speaker) %></span>
+                <span><%= link "Delete", to: Routes.speaker_path(@conn, :delete, speaker), method: :delete, data: [confirm: "Are you sure?"] %></span>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= render Torch.PaginationView, "_pagination.html", assigns %>
+    <% else %>
+      <p class="torch-no-data">No Speakers match your search.</p>
+    <% end %>
+    </section>
+  </div>
+</section>
