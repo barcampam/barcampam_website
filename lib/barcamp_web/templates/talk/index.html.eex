@@ -8,38 +8,26 @@
     <section id="torch-filters">
       <h3>Find Talks</h3>
       <%= form_tag @conn.request_path, method: :get, id: "torch-filters-form" do %>
-        
+
           <div class="field">
             <label>Title</label>
             <%= filter_select(:talk, :title, @conn.params) %>
             <%= filter_string_input(:talk, :title, @conn.params) %>
           </div>
-        
+
           <div class="field">
             <label>Description</label>
             <%= filter_select(:talk, :description, @conn.params) %>
             <%= filter_text_input(:talk, :description, @conn.params) %>
           </div>
-        
+
           <div class="field">
             <label>Room</label>
             <%= filter_select(:talk, :room, @conn.params) %>
             <%= filter_string_input(:talk, :room, @conn.params) %>
           </div>
-        
-        
-        
-          <div class="field">
-            <label>Time from</label>
-            <%= filter_date_input(:talk, :time_from, @conn.params) %>
-          </div>
-        
-          <div class="field">
-            <label>Time to</label>
-            <%= filter_date_input(:talk, :time_to, @conn.params) %>
-          </div>
-        
-        
+
+
         <button type="submit" class="torch-button">Search</button>
         <%= link "Clear Filters", to: Routes.talk_path(@conn, :index) %>
       <% end %>
@@ -51,34 +39,38 @@
       <table>
         <thead>
           <tr>
-            
+
               <th><%= table_link(@conn, "Title", :title) %></th>
-            
+
               <th><%= table_link(@conn, "Description", :description) %></th>
-            
+
               <th><%= table_link(@conn, "Room", :room) %></th>
-            
+
+              <th><%= table_link(@conn, "Day", :day) %></th>
+
               <th><%= table_link(@conn, "Time from", :time_from) %></th>
-            
+
               <th><%= table_link(@conn, "Time to", :time_to) %></th>
-            
+
             <th><span>Actions</span></th>
           </tr>
         </thead>
         <tbody>
           <%= for talk <- @talks do %>
             <tr>
-              
+
                 <td><%= talk.title %></td>
-              
+
                 <td><%= talk.description %></td>
-              
+
                 <td><%= talk.room %></td>
-              
+
+                <td><%= talk.day %></td>
+
                 <td><%= talk.time_from %></td>
-              
+
                 <td><%= talk.time_to %></td>
-              
+
               <td class="torch-actions">
                 <span><%= link "Show", to: Routes.talk_path(@conn, :show, talk) %></span>
                 <span><%= link "Edit", to: Routes.talk_path(@conn, :edit, talk) %></span>

@@ -11,12 +11,12 @@
       <h3>Sponsor Details</h3>
     </div>
     <ul>
-      
+
         <li>
           <div class="torch-show-label">Logo:</div>
-          <div class="torch-show-data"><%= @sponsor.logo %></div>
+          <div class="torch-show-data"><img src="data:<%= @sponsor.logo %>" /></div>
         </li>
-      
+
     </ul>
   </div>
 </section>

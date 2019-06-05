@@ -7,8 +7,8 @@ defmodule Barcamp.Repo.Migrations.CreateTalks do
       add :description, :text
       add :room, :string
       add :day, :integer
-      add :time_from, :naive_datetime
-      add :time_to, :naive_datetime
+      add :time_from, :time
+      add :time_to, :time
 
       timestamps()
     end

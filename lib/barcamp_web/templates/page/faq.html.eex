@@ -1,20 +1,8 @@
 <section class="about-faq">
   <div class="center">
-    <div>Q: Question</div>
-    <div>A: Answer</div>
-    <div>Q: Question</div>
-    <div>A: Answer</div>
-    <div>Q: Question</div>
-    <div>A: Answer</div>
-    <div>Q: Question</div>
-    <div>A: Answer</div>
-    <div>Q: Question</div>
-    <div>A: Answer</div>
-    <div>Q: Question</div>
-    <div>A: Answer</div>
-    <div>Q: Question</div>
-    <div>A: Answer</div>
-    <div>Q: Question</div>
-    <div>A: Answer</div>
+    <%= for qa <- @faqs do %>
+      <div><%= qa.question %></div>
+      <div><%= qa.answer %></div>
+    <% end %>
   </div>
 </section>

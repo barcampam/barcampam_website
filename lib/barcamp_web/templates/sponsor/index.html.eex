@@ -8,10 +8,10 @@
     <section id="torch-filters">
       <h3>Find Sponsors</h3>
       <%= form_tag @conn.request_path, method: :get, id: "torch-filters-form" do %>
-        
-        
-        
-        
+
+
+
+
         <button type="submit" class="torch-button">Search</button>
         <%= link "Clear Filters", to: Routes.sponsor_path(@conn, :index) %>
       <% end %>
@@ -23,18 +23,18 @@
       <table>
         <thead>
           <tr>
-            
+
               <th><%= table_link(@conn, "Logo", :logo) %></th>
-            
+
             <th><span>Actions</span></th>
           </tr>
         </thead>
         <tbody>
           <%= for sponsor <- @sponsors do %>
             <tr>
-              
-                <td><%= sponsor.logo %></td>
-              
+
+                <td><img src="data:<%= sponsor.logo %>" style="max-width: 100px; max-height: 100px;" /></td>
+
               <td class="torch-actions">
                 <span><%= link "Show", to: Routes.sponsor_path(@conn, :show, sponsor) %></span>
                 <span><%= link "Edit", to: Routes.sponsor_path(@conn, :edit, sponsor) %></span>

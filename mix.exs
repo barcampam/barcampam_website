@@ -48,7 +48,10 @@ defmodule Barcamp.MixProject do
       # Other stuff
       {:set_locale, "~> 0.2.6"},
       {:torch, "~> 2.0.0-rc.1"},
-      {:distillery, "~> 2.0"}
+      {:distillery, "~> 2.0"},
+      {:argon2_elixir, "~> 1.2"},
+      {:comeonin, "~> 4.0"},
+      {:earmark, "~> 1.3"}
     ]
   end
 

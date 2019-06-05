@@ -87,4 +87,83 @@ defmodule Barcamp.ScheduleTest do
       assert %Ecto.Changeset{} = Schedule.change_talk(talk)
     end
   end
+
+  describe "streams" do
+    alias Barcamp.Schedule.Stream
+
+    @valid_attrs %{link: "some link", room: "some room"}
+    @update_attrs %{link: "some updated link", room: "some updated room"}
+    @invalid_attrs %{link: nil, room: nil}
+
+    def stream_fixture(attrs \\ %{}) do
+      {:ok, stream} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Schedule.create_stream()
+
+      stream
+    end
+
+    test "paginate_streams/1 returns paginated list of streams" do
+      for _ <- 1..20 do
+        stream_fixture()
+      end
+
+      {:ok, %{streams: streams} = page} = Schedule.paginate_streams(%{})
+
+      assert length(streams) == 15
+      assert page.page_number == 1
+      assert page.page_size == 15
+      assert page.total_pages == 2
+      assert page.total_entries == 20
+      assert page.distance == 5
+      assert page.sort_field == "inserted_at"
+      assert page.sort_direction == "desc"
+    end
+
+    test "list_streams/0 returns all streams" do
+      stream = stream_fixture()
+      assert Schedule.list_streams() == [stream]
+    end
+
+    test "get_stream!/1 returns the stream with given id" do
+      stream = stream_fixture()
+      assert Schedule.get_stream!(stream.id) == stream
+    end
+
+    test "create_stream/1 with valid data creates a stream" do
+      assert {:ok, %Stream{} = stream} = Schedule.create_stream(@valid_attrs)
+      assert stream.link == "some link"
+      assert stream.room == "some room"
+    end
+
+    test "create_stream/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Schedule.create_stream(@invalid_attrs)
+    end
+
+    test "update_stream/2 with valid data updates the stream" do
+      stream = stream_fixture()
+      assert {:ok, stream} = Schedule.update_stream(stream, @update_attrs)
+      assert %Stream{} = stream
+      assert stream.link == "some updated link"
+      assert stream.room == "some updated room"
+    end
+
+    test "update_stream/2 with invalid data returns error changeset" do
+      stream = stream_fixture()
+      assert {:error, %Ecto.Changeset{}} = Schedule.update_stream(stream, @invalid_attrs)
+      assert stream == Schedule.get_stream!(stream.id)
+    end
+
+    test "delete_stream/1 deletes the stream" do
+      stream = stream_fixture()
+      assert {:ok, %Stream{}} = Schedule.delete_stream(stream)
+      assert_raise Ecto.NoResultsError, fn -> Schedule.get_stream!(stream.id) end
+    end
+
+    test "change_stream/1 returns a stream changeset" do
+      stream = stream_fixture()
+      assert %Ecto.Changeset{} = Schedule.change_stream(stream)
+    end
+  end
 end

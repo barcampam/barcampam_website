@@ -11,12 +11,12 @@
       <h3>General Details</h3>
     </div>
     <ul>
-      
+
         <li>
           <div class="torch-show-label">Logo:</div>
-          <div class="torch-show-data"><%= @general.logo %></div>
+          <div class="torch-show-data"><img src="data:<%= @general.logo %>" /></div>
         </li>
-      
+
     </ul>
   </div>
 </section>

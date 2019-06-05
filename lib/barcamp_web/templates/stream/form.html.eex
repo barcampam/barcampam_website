@@ -8,9 +8,15 @@
     <% end %>
 
     <div class="torch-form-group">
-      <%= label f, :logo %>
-      <%= file_input f, :logo %>
-      <%= error_tag f, :logo %>
+      <%= label f, :link %>
+      <%= text_input f, :link %>
+      <%= error_tag f, :link %>
+    </div>
+
+    <div class="torch-form-group">
+      <%= label f, :room %>
+      <%= select f, :room, ["Big Hall", "113w", "114w", "208e", "213w", "214w", "308e"] %>
+      <%= error_tag f, :room %>
     </div>
 
     <div class="torch-submit-form">

@@ -8,10 +8,10 @@
     <section id="torch-filters">
       <h3>Find Generals</h3>
       <%= form_tag @conn.request_path, method: :get, id: "torch-filters-form" do %>
-        
-        
-        
-        
+
+
+
+
         <button type="submit" class="torch-button">Search</button>
         <%= link "Clear Filters", to: Routes.general_path(@conn, :index) %>
       <% end %>
@@ -23,18 +23,18 @@
       <table>
         <thead>
           <tr>
-            
+
               <th><%= table_link(@conn, "Logo", :logo) %></th>
-            
+
             <th><span>Actions</span></th>
           </tr>
         </thead>
         <tbody>
           <%= for general <- @generals do %>
             <tr>
-              
-                <td><%= general.logo %></td>
-              
+
+                <td><img src="data:<%= general.logo %>" style="max-width: 100px; max-height: 100px;" /></td>
+
               <td class="torch-actions">
                 <span><%= link "Show", to: Routes.general_path(@conn, :show, general) %></span>
                 <span><%= link "Edit", to: Routes.general_path(@conn, :edit, general) %></span>

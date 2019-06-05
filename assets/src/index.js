@@ -38,30 +38,30 @@ $(document).ready(function () {
   $("#livestream").carousel("pause")
 
   $("#_big_hall").click(function () {
-    $("#livestream").carousel(1);
+    $("#livestream").carousel(0);
   })
 
   $("#_308E").click(function () {
-    $("#livestream").carousel(2);
+    $("#livestream").carousel(1);
   })
 
   $("#_208E").click(function () {
-    $("#livestream").carousel(3);
+    $("#livestream").carousel(2);
   })
 
   $("#_213W").click(function () {
-    $("#livestream").carousel(4);
+    $("#livestream").carousel(3);
   })
 
   $("#_214W").click(function () {
-    $("#livestream").carousel(5);
+    $("#livestream").carousel(4);
   })
 
   $("#_114W").click(function () {
-    $("#livestream").carousel(6);
+    $("#livestream").carousel(5);
   })
 
   $("#_113W").click(function () {
-    $("#livestream").carousel(7);
+    $("#livestream").carousel(6);
   })
 })

@@ -45,8 +45,8 @@ end
 # when running `mix release`, the first release in the file
 # will be used by default
 
-release :il_api do
-  set(version: current_version(:il_api))
+release :barcamp do
+  set(version: current_version(:barcamp))
 
   set(
     applications: [
@@ -57,7 +57,8 @@ release :il_api do
   set(
     commands: [
       migrate: "rel/commands/migrate.sh",
-      seed: "rel/commands/seed.sh"
+      seed: "rel/commands/seed.sh",
+      create_user: "rel/commands/create_user.sh"
     ]
   )
 end

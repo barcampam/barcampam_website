@@ -11,32 +11,37 @@
       <h3>Talk Details</h3>
     </div>
     <ul>
-      
+
         <li>
           <div class="torch-show-label">Title:</div>
           <div class="torch-show-data"><%= @talk.title %></div>
         </li>
-      
+
         <li>
           <div class="torch-show-label">Description:</div>
           <div class="torch-show-data"><%= @talk.description %></div>
         </li>
-      
+
         <li>
           <div class="torch-show-label">Room:</div>
           <div class="torch-show-data"><%= @talk.room %></div>
         </li>
-      
+
+        <li>
+          <div class="torch-show-label">Day:</div>
+          <div class="torch-show-data"><%= @talk.day %></div>
+        </li>
+
         <li>
           <div class="torch-show-label">Time from:</div>
           <div class="torch-show-data"><%= @talk.time_from %></div>
         </li>
-      
+
         <li>
           <div class="torch-show-label">Time to:</div>
           <div class="torch-show-data"><%= @talk.time_to %></div>
         </li>
-      
+
     </ul>
   </div>
 </section>

@@ -10,8 +10,8 @@
     <header>
       <section id="torch-account-info">
         <div class="torch-container">
-          <a href="/">user@infinite.red</a>
-          <a href="/">Logout</a>
+          <a><%= @current_user.login %></a>
+          <%= link("Logout", to: Routes.session_path(@conn, :delete), method: :delete) %>
         </div>
       </section>
 
@@ -23,13 +23,14 @@
             </a>
           </div>
           <nav class="torch-nav">
-            <%= link("speakers", to: Routes.speaker_path(@conn, :index)) %>
-            <%= link("talks", to: Routes.talk_path(@conn, :index)) %>
-            <%= link("faqs", to: Routes.faq_path(@conn, :index)) %>
-            <%= link("abouts", to: Routes.about_path(@conn, :index)) %>
-            <%= link("partners", to: Routes.partner_path(@conn, :index)) %>
-            <%= link("generals", to: Routes.general_path(@conn, :index)) %>
-            <%= link("sponsors", to: Routes.sponsor_path(@conn, :index)) %>
+            <%= link("Speakers", to: Routes.speaker_path(@conn, :index)) %>
+            <%= link("Calendar", to: Routes.talk_path(@conn, :index)) %>
+            <%= link("FAQs", to: Routes.faq_path(@conn, :index)) %>
+            <%= link("About", to: Routes.about_path(@conn, :index)) %>
+            <%= link("Partners", to: Routes.partner_path(@conn, :index)) %>
+            <%= link("Generals", to: Routes.general_path(@conn, :index)) %>
+            <%= link("Sponsors", to: Routes.sponsor_path(@conn, :index)) %>
+            <%= link("Streams", to: Routes.stream_path(@conn, :index)) %>
           </nav>
         </div>
       </section>

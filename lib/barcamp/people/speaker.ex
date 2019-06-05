@@ -20,7 +20,18 @@ defmodule Barcamp.People.Speaker do
   @doc false
   def changeset(speaker, attrs) do
     speaker
-    |> cast(attrs, [:name, :bio, :topics, :facebook, :twitter, :website, :instagram, :photo, :is_special, :linkedin])
-    |> validate_required([:name, :bio, :topics, :facebook, :twitter, :website, :instagram, :photo, :is_special, :linkedin])
+    |> cast(attrs, [
+      :name,
+      :bio,
+      :topics,
+      :facebook,
+      :twitter,
+      :website,
+      :instagram,
+      :photo,
+      :is_special,
+      :linkedin
+    ])
+    |> validate_required([:name, :photo, :is_special])
   end
 end

@@ -1,0 +1,27 @@
+<section id="torch-toolbar">
+  <div class="torch-container">
+    <%= link "Edit", to: Routes.stream_path(@conn, :edit, @stream), class: "torch-button" %>
+    <%= link "Back", to: Routes.stream_path(@conn, :index), class: "torch-button" %>
+  </div>
+</section>
+
+<section id="torch-header-and-content">
+  <div class="torch-container">
+    <div class="header">
+      <h3>Stream Details</h3>
+    </div>
+    <ul>
+
+
+        <li>
+          <div class="torch-show-label">Room:</div>
+          <div class="torch-show-data"><%= @stream.room %></div>
+        </li>
+        <li>
+          <div class="torch-show-label">Link:</div>
+          <div class="torch-show-data"><%= @stream.link %></div>
+        </li>
+
+    </ul>
+  </div>
+</section>

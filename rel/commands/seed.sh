@@ -1,5 +1,5 @@
 #!/bin/sh
 
-echo "Seeding database"
+echo "Seeding database..."
 
-bin/il_api rpc "Elixir.IlApi.seed"
+bin/barcamp rpc "Elixir.Barcamp.seed"

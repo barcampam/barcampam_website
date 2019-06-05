@@ -284,13 +284,13 @@ section:first-of-type.index {
 section:first-of-type.about-faq {
   .center {
     position: absolute;
-    top: 15%;
-    left: 50%;
+    top: 40px;
+    right: 120px;
+    bottom: 40px;
+    left: 120px;
 
-    width: 500px;
     max-height: 390px;
 
-    margin-left: -230px;
     padding: 5px;
     overflow: scroll;
 
@@ -303,8 +303,6 @@ section:first-of-type.about-faq {
       left: 80px;
 
       width: 270px;
-
-      margin-left: initial;
     }
   }
 }
@@ -331,6 +329,10 @@ section.sponsors {
 
   .logo-group {
     margin-bottom: 24px;
+
+    @include breakpoint(mobile) {
+      margin-right: 20px;
+    }
   }
 
   .logo {
@@ -653,7 +655,7 @@ section.timetable .calendar {
     }
 
     .time, .slot {
-      height: 125px;
+      // height: 125px;
 
       @include breakpoint(mobile) {
         height: initial;
@@ -661,7 +663,8 @@ section.timetable .calendar {
     }
 
     .time {
-      display: flex;
+      display: none;
+      // display: flex;
       align-items: center;
       justify-content: center;
 
@@ -673,7 +676,7 @@ section.timetable .calendar {
     .slot {
       padding: 4px;
 
-      border-bottom: 1px solid $light-gray;
+      // border-bottom: 1px solid $light-gray;
 
       @include breakpoint(mobile) {
         padding-right: 0;

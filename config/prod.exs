@@ -10,9 +10,19 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :barcamp, BarcampWeb.Endpoint,
-  http: [:inet6, port: System.get_env("PORT") || 4000],
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  https: [
+    :inet6,
+    port: {:system, "PORT"},
+    cipher_suite: :strong,
+    keyfile: "priv/cert/barcamp_key.pem",
+    certfile: "priv/cert/barcamp.pem"
+  ],
+  url: [host: "localhost", port: {:system, "PORT"}],
+  force_ssl: [host: nil],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  server: true,
+  root: ".",
+  version: Application.spec(:phoenix_distillery, :vsn)
 
 # Do not print debug messages in production
 config :logger, level: :info

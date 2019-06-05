@@ -1,0 +1,14 @@
+<h2>Login</h2>
+
+<p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+<p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+<%= form_for @conn, Routes.session_path(@conn, :create), [as: :session], fn f -> %>
+  <div>
+    <%= text_input f, :login, placeholder: "Login" %>
+  </div>
+  <div>
+    <%= password_input f, :password, placeholder: "Password" %>
+  </div>
+  <%= submit "Log in" %>
+<% end %>

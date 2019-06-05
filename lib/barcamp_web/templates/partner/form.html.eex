@@ -1,5 +1,4 @@
 <%= form_for @changeset, @action, [multipart: true, id: "torch-form"], fn f -> %>
-  <% IO.inspect @action %>
   <fieldset class="torch-panel">
     <legend>
       <span>Details</span>

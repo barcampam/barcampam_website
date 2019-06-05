@@ -11,57 +11,57 @@
       <h3>Speaker Details</h3>
     </div>
     <ul>
-      
+
+        <li>
+          <div class="torch-show-label">Photo:</div>
+          <div class="torch-show-data"><img src="data:<%= @speaker.photo %>" /></div>
+        </li>
+
         <li>
           <div class="torch-show-label">Name:</div>
           <div class="torch-show-data"><%= @speaker.name %></div>
         </li>
-      
+
         <li>
           <div class="torch-show-label">Bio:</div>
           <div class="torch-show-data"><%= @speaker.bio %></div>
         </li>
-      
+
         <li>
           <div class="torch-show-label">Topics:</div>
           <div class="torch-show-data"><%= @speaker.topics %></div>
         </li>
-      
+
         <li>
           <div class="torch-show-label">Facebook:</div>
           <div class="torch-show-data"><%= @speaker.facebook %></div>
         </li>
-      
+
         <li>
           <div class="torch-show-label">Twitter:</div>
           <div class="torch-show-data"><%= @speaker.twitter %></div>
         </li>
-      
+
         <li>
           <div class="torch-show-label">Website:</div>
           <div class="torch-show-data"><%= @speaker.website %></div>
         </li>
-      
+
         <li>
           <div class="torch-show-label">Instagram:</div>
           <div class="torch-show-data"><%= @speaker.instagram %></div>
         </li>
-      
-        <li>
-          <div class="torch-show-label">Photo:</div>
-          <div class="torch-show-data"><%= @speaker.photo %></div>
-        </li>
-      
+
         <li>
           <div class="torch-show-label">Is special:</div>
           <div class="torch-show-data"><%= @speaker.is_special %></div>
         </li>
-      
+
         <li>
           <div class="torch-show-label">Linkedin:</div>
           <div class="torch-show-data"><%= @speaker.linkedin %></div>
         </li>
-      
+
     </ul>
   </div>
 </section>
