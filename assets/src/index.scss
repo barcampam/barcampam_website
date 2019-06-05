@@ -2,7 +2,14 @@
 @import '~vars';
 @import '~mixins';
 
-@import url('https://allfont.net/allfont.css?fonts=agency-fb&fonts=agency-fb-bold');
+
+@import url(//db.onlinewebfonts.com/c/70777e6bd210190350f7c92395c1860f?family=Agency+FB);
+@font-face {
+  font-weight: bold;
+  font-family: 'Agency FB';
+  font-style: normal;
+  src: local('Agency FB Bold'), url('/fonts/AGENCYB.woff') format('woff');
+}
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
 body {
