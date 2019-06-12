@@ -14,7 +14,7 @@
 
 body {
   font-size: 25px;
-  font-family: 'Agency FB', arial;
+  font-family: 'Agency FB', 'Roboto Mono';
 
   backface-visibility: hidden;
   text-rendering: geometricPrecision;
@@ -258,6 +258,15 @@ section:first-of-type.index {
       font-size: 20px;
     }
 
+    .ballsack {
+      display: flex;
+      justify-content: space-between;
+
+      @include breakpoint(mobile) {
+        display: initial;
+      }
+    }
+
     > div {
       padding: 4px 0;
     }
@@ -289,6 +298,32 @@ section:first-of-type.index {
 }
 
 section:first-of-type.about-faq {
+  height: initial;
+
+  color: white;
+
+  background-color: $purple;
+
+  img {
+    max-width: 90vw;
+  }
+
+  .pixel-container {
+    position: absolute;
+    bottom: - 2 * $padding;
+    left: 0;
+    z-index: -999;
+
+    .pixel {
+      width: $padding;
+      height: $padding;
+    }
+
+    .pixel-fill {
+      background-color: $purple
+    }
+  }
+
   .center {
     position: absolute;
     top: 40px;

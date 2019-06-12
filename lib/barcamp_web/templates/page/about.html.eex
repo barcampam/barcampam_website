@@ -1,7 +1,3 @@
-<section class="about-faq">
-  <div class="center">
-    <%= for p <- @abouts do %>
-      <p><%= render_doc(p) %></p>
-    <% end %>
-  </div>
-</section>
+<%= for p <- @abouts do %>
+  <p><%= render_doc(p) %></p>
+<% end %>

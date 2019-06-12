@@ -35,6 +35,7 @@ defmodule BarcampWeb.PageController do
     |> assign(:sponsors, Logos.list_sponsors())
     |> assign(:partners, Logos.list_partners())
     |> assign(:generals, Logos.list_generals())
+    |> put_layout(:misc)
     |> render("about.html")
   end
 
@@ -51,6 +52,7 @@ defmodule BarcampWeb.PageController do
     |> assign(:sponsors, Logos.list_sponsors())
     |> assign(:partners, Logos.list_partners())
     |> assign(:generals, Logos.list_generals())
+    |> put_layout(:misc)
     |> render("faq.html")
   end
 
