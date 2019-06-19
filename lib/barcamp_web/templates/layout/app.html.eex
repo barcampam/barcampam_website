@@ -7,7 +7,7 @@
     <title><%= gettext "Barcamp | Yerevan 2019" %></title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/index.css") %>"/>
   </head>
-  <body>
+  <body style="<%= if current_locale?(@conn, "am"), do: "font-family: 'Mardoto';" %>">
     <main class="d-flex justify-content-between">
       <a href="<%= Routes.page_path(@conn, :index) %>">
         <img class="header-item header-item-left d-flex align-items-center" src="/images/logo.png" />

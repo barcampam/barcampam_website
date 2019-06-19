@@ -10,6 +10,12 @@
   font-style: normal;
   src: local('Agency FB Bold'), url('/fonts/AGENCYB.woff') format('woff');
 }
+@font-face {
+  font-weight: normal;
+  font-family: 'Mardoto';
+  font-style: normal;
+  src: local('Mardoto'), url('/fonts/Mardoto-Medium.ttf') format('ttf');
+}
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
 body {

@@ -1,8 +1,8 @@
 <section class="index">
   <div class="center">
-    <div class="p" style="<%= "#{if BarcampWeb.LayoutView.current_locale?(@conn, "am"), do: "font-size: 20px;"}" %>"><%= gettext("The most acclaimed tech and media") %></div>
+    <div class="p" style="<%= "#{if BarcampWeb.LayoutView.current_locale?(@conn, "am"), do: "font-size: 18px;"}" %>"><%= gettext("The most acclaimed tech and media") %></div>
     <div class="ballsack">
-      <div class="p" style="<%= "#{if BarcampWeb.LayoutView.current_locale?(@conn, "am"), do: "font-size: 20px;"}" %>">
+      <div class="p" style="<%= "#{if BarcampWeb.LayoutView.current_locale?(@conn, "am"), do: "font-size: 18px;"}" %>">
         <%= gettext("event in the region") %>
       </div>
       <div class="date" style="<%= "#{if BarcampWeb.LayoutView.current_locale?(@conn, "am"), do: "transform: scale(1);"}" %>">
