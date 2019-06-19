@@ -78,44 +78,8 @@
       <% end %>
     </div>
     <div class="calendar-column">
-      <div class="header-item">113W</div>
-      <%= for talk <- Enum.filter(@talks, &(&1.room == "113w")) do %>
-        <div class="slot">
-          <div data-toggle="tooltip" data-placement="right" data-html="true" title="<div><b><%= talk.title %></b></div><div><%= talk.description %></div><div><i><%= talk.time_from %> - <%= talk.time_to %></i></div>">
-            <div><%= talk.title %></div>
-            <div><%= talk.description %></div>
-            <div><%= talk.time_from %> - <%= talk.time_to %></div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="calendar-column">
-      <div class="header-item">114W</div>
-      <%= for talk <- Enum.filter(@talks, &(&1.room == "114w")) do %>
-        <div class="slot">
-          <div data-toggle="tooltip" data-placement="right" data-html="true" title="<div><b><%= talk.title %></b></div><div><%= talk.description %></div><div><i><%= talk.time_from %> - <%= talk.time_to %></i></div>">
-            <div><%= talk.title %></div>
-            <div><%= talk.description %></div>
-            <div><%= talk.time_from %> - <%= talk.time_to %></div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="calendar-column">
-      <div class="header-item">208E</div>
-      <%= for talk <- Enum.filter(@talks, &(&1.room == "208e")) do %>
-        <div class="slot">
-          <div data-toggle="tooltip" data-placement="right" data-html="true" title="<div><b><%= talk.title %></b></div><div><%= talk.description %></div><div><i><%= talk.time_from %> - <%= talk.time_to %></i></div>">
-            <div><%= talk.title %></div>
-            <div><%= talk.description %></div>
-            <div><%= talk.time_from %> - <%= talk.time_to %></div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="calendar-column">
-      <div class="header-item">213W</div>
-      <%= for talk <- Enum.filter(@talks, &(&1.room == "213w")) do %>
+      <div class="header-item">308E</div>
+      <%= for talk <- Enum.filter(@talks, &(&1.room == "308e")) do %>
         <div class="slot">
           <div data-toggle="tooltip" data-placement="right" data-html="true" title="<div><b><%= talk.title %></b></div><div><%= talk.description %></div><div><i><%= talk.time_from %> - <%= talk.time_to %></i></div>">
             <div><%= talk.title %></div>
@@ -138,8 +102,44 @@
       <% end %>
     </div>
     <div class="calendar-column">
-      <div class="header-item">308E</div>
-      <%= for talk <- Enum.filter(@talks, &(&1.room == "308e")) do %>
+      <div class="header-item">213W</div>
+      <%= for talk <- Enum.filter(@talks, &(&1.room == "213w")) do %>
+        <div class="slot">
+          <div data-toggle="tooltip" data-placement="right" data-html="true" title="<div><b><%= talk.title %></b></div><div><%= talk.description %></div><div><i><%= talk.time_from %> - <%= talk.time_to %></i></div>">
+            <div><%= talk.title %></div>
+            <div><%= talk.description %></div>
+            <div><%= talk.time_from %> - <%= talk.time_to %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="calendar-column">
+      <div class="header-item">208E</div>
+      <%= for talk <- Enum.filter(@talks, &(&1.room == "208e")) do %>
+        <div class="slot">
+          <div data-toggle="tooltip" data-placement="right" data-html="true" title="<div><b><%= talk.title %></b></div><div><%= talk.description %></div><div><i><%= talk.time_from %> - <%= talk.time_to %></i></div>">
+            <div><%= talk.title %></div>
+            <div><%= talk.description %></div>
+            <div><%= talk.time_from %> - <%= talk.time_to %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="calendar-column">
+      <div class="header-item">113W</div>
+      <%= for talk <- Enum.filter(@talks, &(&1.room == "113w")) do %>
+        <div class="slot">
+          <div data-toggle="tooltip" data-placement="right" data-html="true" title="<div><b><%= talk.title %></b></div><div><%= talk.description %></div><div><i><%= talk.time_from %> - <%= talk.time_to %></i></div>">
+            <div><%= talk.title %></div>
+            <div><%= talk.description %></div>
+            <div><%= talk.time_from %> - <%= talk.time_to %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="calendar-column">
+      <div class="header-item">114W</div>
+      <%= for talk <- Enum.filter(@talks, &(&1.room == "114w")) do %>
         <div class="slot">
           <div data-toggle="tooltip" data-placement="right" data-html="true" title="<div><b><%= talk.title %></b></div><div><%= talk.description %></div><div><i><%= talk.time_from %> - <%= talk.time_to %></i></div>">
             <div><%= talk.title %></div>
