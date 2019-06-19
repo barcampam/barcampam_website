@@ -11,6 +11,7 @@ defmodule BarcampWeb.PageController do
       else
         Enum.filter(Schedule.list_talks(), &(&1.day == 22))
       end
+      |> Enum.sort(&(Time.compare(&1.time_from, &2.time_from) == :lt))
 
     conn
     |> assign(:talks, talks)
