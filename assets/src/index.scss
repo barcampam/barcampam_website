@@ -384,7 +384,7 @@ section.sponsors {
   }
 
   .logo {
-    width: 100px;
+    width: 150px;
     height: auto;
     margin: 0 60px 60px 0;
 
@@ -393,7 +393,7 @@ section.sponsors {
     }
 
     @include breakpoint(mobile) {
-      width: 80px;
+      width: 125px;
       height: auto;
       margin: 0 25px 25px 0;
     }
