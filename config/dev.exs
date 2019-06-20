@@ -70,6 +70,6 @@ config :phoenix, :plug_init_mode, :runtime
 # Configure your database
 config :barcamp, Barcamp.Repo,
   database: "barcamp_dev",
-  username: "postgres",
+  # username: "postgres",
   hostname: "localhost",
   pool_size: 10
