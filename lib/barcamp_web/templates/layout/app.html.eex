@@ -65,6 +65,18 @@
     <%= render @view_module, @view_template, assigns %>
 
     <section class="sponsors d-flex flex-wrap">
+      <%= if length(@generals) > 0 do %>
+        <div class="logo-group mr-sm-4">
+          <h2 class="text-uppercase font-weight-bold"><%= gettext("General") %></h2>
+          <div class="d-flex flex-wrap">
+            <%= for general <- @generals do %>
+              <div class="logo">
+                <img src="data:<%= general.logo %>" />
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
       <%= if length(@sponsors) > 0 do %>
         <div class="logo-group mr-sm-4">
           <h2 class="text-uppercase font-weight-bold"><%= gettext("Sponsors") %></h2>
@@ -84,18 +96,6 @@
             <%= for partner <- @partners do %>
               <div class="logo">
                 <img src="data:<%= partner.logo %>" />
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-      <%= if length(@generals) > 0 do %>
-        <div class="logo-group mr-sm-4">
-          <h2 class="text-uppercase font-weight-bold"><%= gettext("General") %></h2>
-          <div class="d-flex flex-wrap">
-            <%= for general <- @generals do %>
-              <div class="logo">
-                <img src="data:<%= general.logo %>" />
               </div>
             <% end %>
           </div>
