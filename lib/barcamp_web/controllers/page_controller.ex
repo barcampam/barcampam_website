@@ -17,9 +17,9 @@ defmodule BarcampWeb.PageController do
     |> assign(:talks, talks)
     |> assign(:speakers, People.list_speakers())
     |> assign(:streams, Schedule.list_streams())
+    |> assign(:generals, Logos.list_generals())
     |> assign(:sponsors, Logos.list_sponsors())
     |> assign(:partners, Logos.list_partners())
-    |> assign(:generals, Logos.list_generals())
     |> render("index.html")
   end
 
