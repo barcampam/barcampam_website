@@ -7,7 +7,7 @@ import './index.scss'
 // import '../../lib/**/*.js'
 
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="popover"]').popover({ html: true })
 })
 
 $('#speakers-see-more').click(function () {

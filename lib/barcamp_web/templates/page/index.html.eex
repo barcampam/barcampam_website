@@ -160,7 +160,7 @@
   </h2>
   <div id="special-speakers" class="d-flex flex-wrap overflow-hidden" style="height: 380px;">
     <%= for speaker <- @speakers, speaker.is_special do %>
-      <div class="speaker" data-toggle="tooltip" data-placement="right" data-html="true" title="<%= if speaker.bio, do: raw("<div><b>#{speaker.bio}</b></div>") %><%= if speaker.website, do: raw("<div>#{speaker.website}</div>") %><%= if speaker.facebook, do: raw("<div>#{speaker.facebook}</div>") %><%= if speaker.twitter, do: raw("<div>#{speaker.twitter}</div>") %><%= if speaker.instagram, do: raw("<div>#{speaker.instagram}</div>") %><%= if speaker.linkedin, do: raw("<div>#{speaker.linkedin}</div>") %>">
+      <div class="speaker" data-toggle="popover" data-content="<%= if speaker.bio, do: raw("<div><b>#{speaker.bio}</b></div>") %><%= if speaker.website, do: raw("<div><a href='http://#{speaker.website}' target='_blank'>#{speaker.website}</a></div>") %><%= if speaker.facebook, do: raw("<div><a href='http://#{speaker.facebook}' target='_blank'>#{speaker.facebook}</a></div>") %><%= if speaker.twitter, do: raw("<div><a href='http://#{speaker.twitter}' target='_blank'>#{speaker.twitter}</a></div>") %><%= if speaker.instagram, do: raw("<div><a href='http://#{speaker.instagram}' target='_blank'>#{speaker.instagram}</a></div>") %><%= if speaker.linkedin, do: raw("<div><a href='http://#{speaker.linkedin}' target='_blank'>#{speaker.linkedin}</a></div>") %>">
         <div class="photo" style="background-image: url('/images/<%= speaker.photo %>')"></div>
         <div class="name"><%= speaker.name %></div>
         <div class="occupation"><%= speaker.topics %></div>
@@ -175,7 +175,7 @@
   </h2>
   <div id="speakers" class="d-flex flex-wrap overflow-hidden" style="height: 380px;">
     <%= for speaker <- @speakers, !speaker.is_special do %>
-      <div class="speaker" data-toggle="tooltip" data-placement="right" data-html="true" title="<%= if speaker.bio, do: raw("<div><b>#{speaker.bio}</b></div>") %><%= if speaker.website, do: raw("<div>#{speaker.website}</div>") %><%= if speaker.facebook, do: raw("<div>#{speaker.facebook}</div>") %><%= if speaker.twitter, do: raw("<div>#{speaker.twitter}</div>") %><%= if speaker.instagram, do: raw("<div>#{speaker.instagram}</div>") %><%= if speaker.linkedin, do: raw("<div>#{speaker.linkedin}</div>") %>">
+      <div class="speaker" data-toggle="popover" data-content="<%= if speaker.bio, do: raw("<div><b>#{speaker.bio}</b></div>") %><%= if speaker.website, do: raw("<div><a href='http://#{speaker.website}' target='_blank'>#{speaker.website}</a></div>") %><%= if speaker.facebook, do: raw("<div><a href='http://#{speaker.facebook}' target='_blank'>#{speaker.facebook}</a></div>") %><%= if speaker.twitter, do: raw("<div><a href='http://#{speaker.twitter}' target='_blank'>#{speaker.twitter}</a></div>") %><%= if speaker.instagram, do: raw("<div><a href='http://#{speaker.instagram}' target='_blank'>#{speaker.instagram}</a></div>") %><%= if speaker.linkedin, do: raw("<div><a href='http://#{speaker.linkedin}' target='_blank'>#{speaker.linkedin}</a></div>") %>">
         <div class="photo" style="background-image: url('/images/<%= speaker.photo %>')"></div>
         <div class="name"><%= speaker.name %></div>
         <div class="occupation"><%= speaker.topics %></div>

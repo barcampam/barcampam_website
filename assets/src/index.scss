@@ -796,6 +796,7 @@ section.speakers {
 
       background-position: center;
       background-size: cover;
+      cursor: pointer;
     }
 
     .name {
@@ -957,5 +958,13 @@ section.livestream {
   .pixel-container-bottom-right {
     right: 0;
     bottom: 0;
+  }
+}
+
+.popover a {
+  color: $blue;
+
+  &:hover {
+    color: $light-blue;
   }
 }
