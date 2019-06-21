@@ -6,6 +6,8 @@ defmodule Barcamp.Application do
   use Application
 
   def start(_type, _args) do
+    Barcamp.People.convert_photos()
+
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
