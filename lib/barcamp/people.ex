@@ -183,4 +183,16 @@ defmodule Barcamp.People do
       attrs
     end
   end
+
+  # def convert_photos do
+  #   Speaker
+  #   |> Repo.all()
+  #   |> Enum.map(fn speaker ->
+  #     hash = 32 |> :crypto.strong_rand_bytes() |> Base.url_encode64() |> binary_part(0, 32)
+  #     "image/" <> _type <> ";base64," <> base = speaker.photo
+  #     File.write!(Path.expand("priv/static/images/#{hash}"), Base.decode64!(base))
+
+  #     update_speaker(speaker, %{photo: hash})
+  #   end)
+  # end
 end

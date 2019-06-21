@@ -33,13 +33,13 @@
 
     <div class="torch-form-group">
       <%= label f, :time_from %>
-      <%= time_select f, :time_from, hour: [options: 10..17] %>
+      <%= time_select f, :time_from %>
       <%= error_tag f, :time_from %>
     </div>
 
     <div class="torch-form-group">
       <%= label f, :time_to %>
-      <%= time_select f, :time_to, hour: [options: 10..17] %>
+      <%= time_select f, :time_to %>
       <%= error_tag f, :time_to %>
     </div>
 
