@@ -117,10 +117,10 @@ module.exports = (env, options) => ({
     //   fix: true
     // }),
     // Deletes the contents of the destination directory
-    new CleanWebpackPlugin(
-      [path.join(paths.outputPath, '../')],
-      { verbose: false, allowExternal: true, ignore: ['docs', 'toolkit'] }
-    ),
+    // new CleanWebpackPlugin(
+    //   [path.join(paths.outputPath, '../')],
+    //   { verbose: false, allowExternal: true, ignore: ['docs', 'toolkit'] }
+    // ),
     // Copys files only, doesn't do anything else
     new CopyWebpackPlugin(
       [{ from: 'static/', to: '../' }],
