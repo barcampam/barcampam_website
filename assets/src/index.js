@@ -17,7 +17,7 @@ $('#speakers-see-more').click(function () {
 })
 
 $('#speakers-see-less').click(function () {
-  $('#speakers').css("height", "380px")
+  $('#speakers').css("height", "378px")
   $('#speakers-see-more').css("display", "")
   $('#speakers-see-less').css("display", "none")
 })
@@ -29,7 +29,7 @@ $('#special-speakers-see-more').click(function () {
 })
 
 $('#special-speakers-see-less').click(function () {
-  $('#special-speakers').css("height", "380px")
+  $('#special-speakers').css("height", "378px")
   $('#special-speakers-see-more').css("display", "")
   $('#special-speakers-see-less').css("display", "none")
 })
