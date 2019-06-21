@@ -840,15 +840,15 @@ section.speakers {
 
     z-index: -999;
 
-    margin-bottom: -3 * $padding;
+    margin-bottom: $padding / 2 * -3;
 
     @include breakpoint(mobile) {
       display: none;
     }
 
     .pixel {
-      width: $padding;
-      height: $padding;
+      width: $padding / 2;
+      height: $padding / 2;
     }
 
     .pixel-fill {

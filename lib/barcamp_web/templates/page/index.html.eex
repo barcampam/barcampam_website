@@ -161,7 +161,7 @@
   <div id="special-speakers" class="d-flex flex-wrap overflow-hidden" style="height: 380px;">
     <%= for speaker <- @speakers, speaker.is_special do %>
       <div class="speaker" data-toggle="tooltip" data-placement="right" data-html="true" title="<%= if speaker.bio, do: raw("<div><b>#{speaker.bio}</b></div>") %><%= if speaker.website, do: raw("<div>#{speaker.website}</div>") %><%= if speaker.facebook, do: raw("<div>#{speaker.facebook}</div>") %><%= if speaker.twitter, do: raw("<div>#{speaker.twitter}</div>") %><%= if speaker.instagram, do: raw("<div>#{speaker.instagram}</div>") %><%= if speaker.linkedin, do: raw("<div>#{speaker.linkedin}</div>") %>">
-        <div class="photo" style="background-image: url('data:<%= speaker.photo %>')"></div>
+        <div class="photo" style="background-image: url('/images/<%= speaker.photo %>')"></div>
         <div class="name"><%= speaker.name %></div>
         <div class="occupation"><%= speaker.topics %></div>
       </div>
@@ -176,7 +176,7 @@
   <div id="speakers" class="d-flex flex-wrap overflow-hidden" style="height: 380px;">
     <%= for speaker <- @speakers, !speaker.is_special do %>
       <div class="speaker" data-toggle="tooltip" data-placement="right" data-html="true" title="<%= if speaker.bio, do: raw("<div><b>#{speaker.bio}</b></div>") %><%= if speaker.website, do: raw("<div>#{speaker.website}</div>") %><%= if speaker.facebook, do: raw("<div>#{speaker.facebook}</div>") %><%= if speaker.twitter, do: raw("<div>#{speaker.twitter}</div>") %><%= if speaker.instagram, do: raw("<div>#{speaker.instagram}</div>") %><%= if speaker.linkedin, do: raw("<div>#{speaker.linkedin}</div>") %>">
-        <div class="photo" style="background-image: url('data:<%= speaker.photo %>')"></div>
+        <div class="photo" style="background-image: url('/images/<%= speaker.photo %>')"></div>
         <div class="name"><%= speaker.name %></div>
         <div class="occupation"><%= speaker.topics %></div>
       </div>

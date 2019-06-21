@@ -14,7 +14,7 @@
 
         <li>
           <div class="torch-show-label">Photo:</div>
-          <div class="torch-show-data"><img src="data:<%= @speaker.photo %>" /></div>
+          <div class="torch-show-data"><img src="/images/<%= @speaker.photo %>" /></div>
         </li>
 
         <li>

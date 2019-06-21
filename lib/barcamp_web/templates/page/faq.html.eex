@@ -1,4 +1,4 @@
 <%= for qa <- @faqs do %>
-  <div><%= render_doc(qa.question) %></div>
+  <div><b><%= render_doc(qa.question) %></b></div>
   <div><%= render_doc(qa.answer) %></div>
 <% end %>

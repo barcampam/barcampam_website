@@ -174,11 +174,11 @@ defmodule Barcamp.People do
 
   defp handle_image(attrs, param) do
     if attrs[param] do
-      %Plug.Upload{content_type: content_type, path: path} = attrs[param]
-      base = path |> File.read!() |> Base.encode64()
-      image = "#{content_type};base64,#{base}"
+      %Plug.Upload{path: path} = attrs[param]
+      filename = Path.basename(path)
+      File.copy!(path, Path.expand("priv/static/images/#{filename}"))
 
-      Map.put(attrs, param, image)
+      Map.put(attrs, param, filename)
     else
       attrs
     end
