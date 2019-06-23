@@ -9,7 +9,7 @@ defmodule BarcampWeb.PageController do
       if day = conn.params["day"] do
         Enum.filter(Schedule.list_talks(), &(&1.day == String.to_integer(day)))
       else
-        Enum.filter(Schedule.list_talks(), &(&1.day == 22))
+        Enum.filter(Schedule.list_talks(), &(&1.day == 23))
       end
       |> Enum.sort(&(Time.compare(&1.time_from, &2.time_from) == :lt))
 

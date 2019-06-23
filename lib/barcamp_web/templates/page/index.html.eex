@@ -17,8 +17,8 @@
     <h2 class="mb-0 ml-sm-1 text-uppercase font-weight-bold" style="<%= "#{if BarcampWeb.LayoutView.current_locale?(@conn, "am"), do: "font-size: 20px;"}" %>"><%= gettext("Timetable") %></h2>
     <div class="timetable-buttons d-flex align-items-center text-uppercase font-weight-bold">
       <div><%= gettext("Jun") %></div>
-      <a href="?day=22#timetable" class="<%= if @conn.params["day"] != "23", do: "current" %>">22</a>
-      <a href="?day=23#timetable" class="<%= if @conn.params["day"] == "23", do: "current" %>">23</a>
+      <a href="?day=22#timetable" class="<%= if @conn.params["day"] == "22", do: "current" %>">22</a>
+      <a href="?day=23#timetable" class="<%= if @conn.params["day"] != "22", do: "current" %>">23</a>
       <div class="border-left-0">10:00-18:00</div>
     </div>
   </div>
